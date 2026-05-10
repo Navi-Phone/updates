@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+<!-- אזור כותרת -->
+<div class="header">
+    <h1>עדכוני תוכנה</h1>
+    <p>רשימת העדכונים והגרסאות הזמינות למכשיר</p>
+    
+    <button class="btn-update" onclick="toggleInstructions()">
+        <span id="btn-icon">▼</span> איך לעדכן את המכשיר?
+    </button>
+</div>
+
+<!-- אזור הוראות נפתח -->
+<div id="instructions-section" class="instructions">
+    <h3>הוראות לעדכון:</h3>
+    <ol>
+        <li>וודאו שהסוללה במכשיר טעונה לפחות ל-50%.</li>
+        <li>הורידו את קובץ העדכון אל כרטיס הזיכרון.</li>
+        <li>הכניסו את כרטיס הזיכרון למכשיר.</li>
+        <li>היכנסו בתפריט המכשיר ל: <strong>הגדרות > תוכנה > עדכון מכרטיס זיכרון</strong>.</li>
+        <li>בחרו בקובץ שהורדתם והמתינו לסיום התהליך. <strong>אין לכבות את המכשיר!</strong></li>
+    </ol>
+</div>
+
+<!-- רשימת הגרסאות הנוצרת אוטומטית מקבצי ה-MD -->
+<div class="versions-wrapper">
+    {% assign sorted_updates = site.updates | reverse %}
+    {% for update in sorted_updates %}
+    <div class="version-card">
+        {{ update.content }}
+    </div>
+    {% endfor %}
+</div>

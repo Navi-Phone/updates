@@ -1,0 +1,4 @@
+name: עדכוני תוכנה - NAVI
+collections:
+  updates:
+    output: false
